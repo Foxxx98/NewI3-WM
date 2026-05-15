@@ -1,0 +1,69 @@
+#!/bin/bash
+
+echo "Instalando dependencias..."
+
+sudo pacman -S --needed python python-pillow
+
+mkdir -p ~/Scripts
+mkdir -p ~/Pictures/Wallpapers
+mkdir -p ~/wallpaper_colors_static
+
+chmod +x ~/Scripts/wallpaper_static_sorter.py
+
+echo ""
+echo "===================================="
+echo "LISTO"
+echo "===================================="
+echo ""
+echo "Ejecuta:"
+echo ""
+echo "python ~/Scripts/wallpaper_static_sorter.py"
+echo ""
+
+#!/bin/bash
+
+echo "Instalando dependencias..."
+
+sudo pacman -S --needed python python-pillow steam
+
+mkdir -p ~/Scripts
+mkdir -p ~/wallpaper_colors_engine
+
+chmod +x ~/Scripts/wallpaper_engine_sorter.py
+
+echo ""
+echo "===================================="
+echo "LISTO"
+echo "===================================="
+echo ""
+echo "Ejecuta:"
+echo ""
+echo "python ~/Scripts/wallpaper_engine_sorter.py"
+echo ""
+
+
+
+Cómo usar
+
+Dar permisos:
+
+chmod +x ~/Scripts/*.sh
+chmod +x ~/Scripts/*.py
+
+Instalar:
+
+~/Scripts/setup_static_wallpapers.sh
+
+y:
+
+~/Scripts/setup_wallpaper_engine.sh
+
+Ejecutar:
+
+python ~/Scripts/wallpaper_static_sorter.py
+
+o:
+
+python ~/Scripts/wallpaper_engine_sorter.py
+
+
