@@ -1,0 +1,87 @@
+#!/usr/bin/env python3
+
+import os
+import random
+import subprocess
+
+STATIC_DIR = os.path.expanduser(
+    "~/wallpaper_colors_static"
+)
+
+ENGINE_DIR = os.path.expanduser(
+    "~/wallpaper_colors_engine"
+)
+
+STATIC_WALLPAPER_FOLDER = os.path.expanduser(
+    "~/Pictures/Wallpapers"
+)
+
+WORKSHOP_DIR = os.path.expanduser(
+    "~/.steam/steam/steamapps/workshop/content/431960"
+)
+
+def available_colors():
+
+    static_colors = set(
+        f.replace(".txt", "")
+        for f in os.listdir(STATIC_DIR)
+    )
+
+    engine_colors = set(
+        f.replace(".txt", "")
+        for f in os.listdir(ENGINE_DIR)
+    )
+
+    return list(static_colors & engine_colors)
+
+def random_from_file(path):
+
+    with open(path, "r") as f:
+        lines = [
+            line.strip()
+            for line in f.readlines()
+            if line.strip()
+        ]
+
+    return random.choice(lines)
+
+colors = available_colors()
+
+if not colors:
+    print("No compatible colors.")
+    exit()
+
+color = random.choice(colors)
+
+static_wallpaper = random_from_file(
+    os.path.join(STATIC_DIR, f"{color}.txt")
+)
+
+engine_wallpaper = random_from_file(
+    os.path.join(ENGINE_DIR, f"{color}.txt")
+)
+
+static_path = os.path.join(
+    STATIC_WALLPAPER_FOLDER,
+    static_wallpaper
+)
+
+engine_path = os.path.join(
+    WORKSHOP_DIR,
+    engine_wallpaper
+)
+
+print(f"Using color: {color}")
+
+subprocess.run([
+    "feh",
+    "--bg-fill",
+    static_path
+])
+
+subprocess.Popen([
+    "linux-wallpaperengine",
+    "--screen-root",
+    "DP-1",
+    engine_path
+])
