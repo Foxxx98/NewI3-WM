@@ -1,0 +1,36 @@
+#!/bin/bash
+
+echo "==================================="
+echo "Instalando dependencias..."
+echo "==================================="
+
+sudo pacman -S --needed \
+    python \
+    python-pillow \
+    feh \
+    rofi
+
+echo ""
+echo "==================================="
+echo "Instalando linux-wallpaperengine"
+echo "==================================="
+
+if ! command -v linux-wallpaperengine &> /dev/null
+then
+    yay -S --needed linux-wallpaperengine
+fi
+
+mkdir -p ~/Scripts
+
+chmod +x ~/Scripts/*.py
+
+echo ""
+echo "==================================="
+echo "LISTO"
+echo "==================================="
+
+echo ""
+echo "Ejecuta:"
+echo ""
+echo "python ~/Scripts/sync_wallpapers.py"
+echo ""
