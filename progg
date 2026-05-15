@@ -1,0 +1,25 @@
+Programa	Qué hace
+picom	Transparencia, blur, sombras, animaciones
+picom-ibhagwan	Picom mejorado con blur/animaciones premium
+i3-gaps	Espacios entre ventanas
+polybar	Barra moderna y personalizable
+rofi	Launcher y menús elegantes
+eww	Widgets, dashboards y overlays
+dunst	Notificaciones minimalistas
+kitty	Terminal moderna con GPU y transparencia
+wallust	Colores automáticos según wallpaper
+pywal	Theme automático basado en wallpapers
+betterlockscreen	Lockscreen aesthetic con blur
+xidlehook	Acciones automáticas por inactividad
+cava	Visualizador de música
+GLava	Visualizador de audio OpenGL overlay
+conky	Widgets de sistema en escritorio
+jgmenu	Menús minimalistas ligeros
+lemonbar	Barra ultraligera
+i3status-rust	Status bar moderna para i3
+sxhkd	Hotkeys avanzadas
+xwinwrap	Videos/shaders como wallpaper
+feh	Wallpapers estáticos
+linux-wallpaperengine	Wallpapers animados
+fastfetch	Información del sistema aesthetic
+pipes.sh	Animaciones aesthetic en terminal
